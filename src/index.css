@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;600;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-disciplined-primary: #3B82F6;
+  --color-disciplined-bg: #0A0A0B;
+  --color-disciplined-card: #151619;
+  --color-disciplined-border: rgba(255, 255, 255, 0.1);
+  
+  --color-cat-essential: #EF4444;
+  --color-cat-fitness: #3B82F6;
+  --color-cat-health: #10B981;
+  --color-cat-stress: #8B5CF6;
+  --color-cat-tidy: #F59E0B;
+}
+
+@layer base {
+  body {
+    @apply bg-disciplined-bg text-white font-sans antialiased transition-colors duration-300;
+  }
+  
+  body.light {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+body.light .glass {
+  @apply bg-white/60 backdrop-blur-lg border border-gray-200;
+}
+
+.disciplined-card {
+  @apply bg-disciplined-card border border-disciplined-border rounded-3xl transition-all duration-200;
+}
+
+body.light .disciplined-card {
+  @apply bg-white border-gray-100 shadow-sm;
+}
+
+.progress-ring {
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
